@@ -1,0 +1,40 @@
+id: graph_slam
+name: Graph SLAM
+category: slam
+summary: SLAM formulation that optimizes a pose graph using odometry, sensor constraints, and loop closures.
+requirements:
+  - odometry
+  - lidar
+  - optimization_solver
+  - sufficient_compute_power
+strengths:
+  - robust_to_uncertainty
+  - suitable_for_indoor_navigation
+  - widely_used
+limitations:
+  - computationally_expensive
+  - implementation_complexity
+  - sensitive_to_noise
+metrics:
+  - localization_error
+  - mapping_accuracy
+  - computation_time
+  - robustness_score
+tags:
+  - mobile_robot
+  - indoor_factory
+  - agv
+  - amr
+  - uncertain_system
+suitable_when:
+  - The robot must build or refine a map while revisiting factory areas.
+  - Loop closures are available and map consistency matters.
+avoid_when:
+  - Compute budget is too limited for graph optimization.
+  - The deployment needs only localization in a fixed, already validated map.
+typical_use_cases:
+  - Factory mapping during commissioning.
+  - Long-route indoor SLAM with loop closure.
+related_methods:
+  - ekf_slam
+notes: Graph SLAM is valuable for map building and correction, but the MVP should keep it separate from control and planning logic.

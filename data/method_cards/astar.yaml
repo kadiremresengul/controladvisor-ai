@@ -1,0 +1,38 @@
+id: astar
+name: A* Search
+category: global_planning
+summary: Heuristic graph search for finding efficient paths through known grid maps or roadmaps.
+requirements:
+  - map
+strengths:
+  - simple
+  - interpretable
+  - low_compute_cost
+  - suitable_for_indoor_navigation
+  - widely_used
+limitations:
+  - weak_with_dynamic_obstacles
+metrics:
+  - path_length
+  - computation_time
+  - collision_count
+tags:
+  - mobile_robot
+  - indoor_factory
+  - agv
+  - amr
+  - static_obstacles
+  - payload_transport
+suitable_when:
+  - A grid map or topological graph is available.
+  - The goal is to produce a global route through mostly static structure.
+avoid_when:
+  - Dynamic obstacles require local reactive avoidance without another planner.
+  - The map is unknown or changes faster than it can be updated.
+typical_use_cases:
+  - Global routing through factory aisles.
+  - Warehouse route planning on occupancy grids.
+related_methods:
+  - dwa
+  - pure_pursuit
+notes: A* should be paired with a local planner or tracker for real AGV navigation.

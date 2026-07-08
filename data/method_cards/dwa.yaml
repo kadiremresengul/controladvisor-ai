@@ -1,0 +1,44 @@
+id: dwa
+name: Dynamic Window Approach
+category: local_planning
+summary: Real-time local planner that samples feasible robot velocities and scores short-horizon trajectories for obstacle avoidance.
+requirements:
+  - odometry
+  - lidar
+  - tuning_effort
+strengths:
+  - suitable_for_real_time
+  - suitable_for_indoor_navigation
+  - handles_dynamic_obstacles
+  - widely_used
+limitations:
+  - requires_tuning
+  - local_minima_risk
+  - weak_with_dynamic_obstacles
+metrics:
+  - computation_time
+  - collision_count
+  - path_length
+  - constraint_violation
+tags:
+  - mobile_robot
+  - differential_drive
+  - indoor_factory
+  - agv
+  - amr
+  - dynamic_obstacles
+  - payload_transport
+suitable_when:
+  - The robot needs reactive local obstacle avoidance from lidar or local costmaps.
+  - A separate global plan provides the larger route.
+avoid_when:
+  - The environment has traps or narrow passages that require longer-horizon reasoning.
+  - Smooth constraint handling is more important than sampling-based reactivity.
+typical_use_cases:
+  - Local obstacle avoidance in warehouse aisles.
+  - Velocity command generation near people or forklifts.
+related_methods:
+  - astar
+  - mpc
+  - pure_pursuit
+notes: DWA is useful for the MVP as a local planner, but it is not a complete navigation architecture by itself.
