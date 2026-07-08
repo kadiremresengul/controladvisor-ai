@@ -1,0 +1,42 @@
+id: pure_pursuit
+name: Pure Pursuit
+category: trajectory_tracking
+summary: Geometric path-tracking controller that steers toward a lookahead point on a planned path.
+requirements:
+  - odometry
+  - tuning_effort
+strengths:
+  - simple
+  - interpretable
+  - low_compute_cost
+  - suitable_for_real_time
+  - suitable_for_indoor_navigation
+limitations:
+  - requires_tuning
+  - weak_with_strong_nonlinearity
+  - weak_with_dynamic_obstacles
+metrics:
+  - tracking_error
+  - computation_time
+  - path_length
+tags:
+  - mobile_robot
+  - differential_drive
+  - indoor_factory
+  - agv
+  - amr
+  - payload_transport
+suitable_when:
+  - A feasible path already exists and simple real-time path following is enough.
+  - Robot speeds are moderate and dynamics are not aggressive.
+avoid_when:
+  - Tight constraints on velocity, acceleration, or footprint must be enforced.
+  - Dynamic obstacle interaction requires predictive planning.
+typical_use_cases:
+  - AGV lane or route following.
+  - Baseline trajectory tracking for differential-drive robots.
+related_methods:
+  - pid
+  - lqr
+  - mpc
+notes: Pure Pursuit is a good baseline tracker for the MVP when paired with a planner and safety layer.

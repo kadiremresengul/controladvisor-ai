@@ -1,0 +1,41 @@
+id: ekf_slam
+name: EKF-SLAM
+category: slam
+summary: Extended Kalman Filter SLAM that jointly estimates robot pose and landmarks using linearized motion and measurement models.
+requirements:
+  - system_model
+  - nonlinear_model
+  - odometry
+  - tuning_effort
+strengths:
+  - interpretable
+  - suitable_for_indoor_navigation
+  - widely_used
+limitations:
+  - sensitive_to_noise
+  - weak_with_strong_nonlinearity
+  - implementation_complexity
+metrics:
+  - localization_error
+  - mapping_accuracy
+  - computation_time
+  - robustness_score
+tags:
+  - mobile_robot
+  - indoor_factory
+  - agv
+  - amr
+  - nonlinear_system
+  - uncertain_system
+suitable_when:
+  - Landmark count is small to medium and the environment has repeatable features.
+  - Engineers need an interpretable probabilistic baseline.
+avoid_when:
+  - Large-scale maps or dense features make covariance maintenance too expensive.
+  - Linearization errors are expected to dominate.
+typical_use_cases:
+  - Landmark-based indoor robot localization and mapping.
+  - Educational or baseline SLAM implementations.
+related_methods:
+  - graph_slam
+notes: EKF-SLAM is best treated as a baseline for small-to-medium environments rather than the default for large factories.

@@ -1,9 +1,14 @@
 id: template_method_card
 name: Template Method Card
-status: template
-summary: Replace this with a short method description.
-applicability: []
-inputs: []
-outputs: []
-tradeoffs: []
-explainability_notes: []
+category: low_level_control
+summary: Replace this with a short method description before using as a real card.
+requirements: []
+strengths: []
+limitations: []
+metrics: []
+tags: []
+suitable_when: []
+avoid_when: []
+typical_use_cases: []
+related_methods: []
+notes: Template only. Day 4 loaders should skip files prefixed with an underscore.

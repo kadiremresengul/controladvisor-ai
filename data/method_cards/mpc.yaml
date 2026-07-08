@@ -1,0 +1,49 @@
+id: mpc
+name: Model Predictive Control
+category: optimal_control
+summary: Receding-horizon optimal control that optimizes future actions while respecting model, state, and input constraints.
+requirements:
+  - system_model
+  - optimization_solver
+  - sufficient_compute_power
+  - tuning_effort
+strengths:
+  - handles_constraints
+  - good_tracking_performance
+  - suitable_for_real_time
+  - suitable_for_indoor_navigation
+  - robust_to_uncertainty
+limitations:
+  - requires_accurate_model
+  - computationally_expensive
+  - implementation_complexity
+metrics:
+  - tracking_error
+  - control_effort
+  - computation_time
+  - constraint_violation
+  - robustness_score
+tags:
+  - mobile_robot
+  - differential_drive
+  - indoor_factory
+  - agv
+  - amr
+  - safety_critical
+  - payload_transport
+  - nonlinear_system
+suitable_when:
+  - Velocity, acceleration, footprint, or safety constraints must be handled explicitly.
+  - The robot has enough compute for repeated online optimization.
+  - A usable kinematic or dynamic model is available.
+avoid_when:
+  - Compute budget is too low for reliable solve times.
+  - The model is poor and cannot be updated or validated.
+typical_use_cases:
+  - Constrained trajectory tracking for indoor AGVs.
+  - Local motion control around velocity and acceleration limits.
+related_methods:
+  - lqr
+  - pure_pursuit
+  - dwa
+notes: For the MVP, MPC is a strong candidate for constrained tracking but should be paired with global planning and perception.

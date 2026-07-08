@@ -1,0 +1,40 @@
+id: lqr
+name: Linear Quadratic Regulator
+category: optimal_control
+summary: Optimal state-feedback controller for linear systems using quadratic state and control penalties.
+requirements:
+  - linear_model
+  - system_model
+  - tuning_effort
+strengths:
+  - interpretable
+  - good_tracking_performance
+  - low_compute_cost
+  - suitable_for_real_time
+limitations:
+  - requires_accurate_model
+  - weak_with_strong_nonlinearity
+metrics:
+  - tracking_error
+  - control_effort
+  - settling_time
+  - robustness_score
+tags:
+  - mobile_robot
+  - differential_drive
+  - agv
+  - amr
+  - nonlinear_system
+suitable_when:
+  - The robot can be controlled around a valid linearization or operating point.
+  - State feedback is available and constraints are soft or handled elsewhere.
+avoid_when:
+  - Nonlinearities dominate across the full maneuver.
+  - Hard state or actuator constraints must be enforced directly.
+typical_use_cases:
+  - Stabilizing linearized robot dynamics.
+  - Baseline optimal control for trajectory tracking experiments.
+related_methods:
+  - pid
+  - mpc
+notes: LQR can be useful for local stabilization, but constrained AGV operation may require MPC or a separate safety layer.

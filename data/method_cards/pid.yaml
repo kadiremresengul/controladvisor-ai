@@ -1,0 +1,41 @@
+id: pid
+name: PID Control
+category: low_level_control
+summary: Classical proportional-integral-derivative feedback control for simple speed, position, or actuator loops.
+requirements:
+  - encoder
+  - tuning_effort
+strengths:
+  - simple
+  - interpretable
+  - low_compute_cost
+  - suitable_for_real_time
+  - widely_used
+limitations:
+  - requires_tuning
+  - weak_with_strong_nonlinearity
+  - may_oscillate
+metrics:
+  - tracking_error
+  - settling_time
+  - overshoot
+  - control_effort
+tags:
+  - mobile_robot
+  - differential_drive
+  - agv
+  - amr
+  - payload_transport
+suitable_when:
+  - Wheel velocity, steering, or lift actuator loops need simple real-time feedback.
+  - The controlled subsystem is mostly decoupled and can be tuned from data or operator experience.
+avoid_when:
+  - Strongly coupled nonlinear dynamics dominate the behavior.
+  - Hard state and input constraints must be enforced directly by the controller.
+typical_use_cases:
+  - Differential-drive wheel speed control.
+  - Low-level motor or actuator position loops.
+related_methods:
+  - lqr
+  - mpc
+notes: Useful as a low-level component inside a larger AGV navigation stack, not as a full navigation method.
