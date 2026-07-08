@@ -1,0 +1,41 @@
+id: indoor_diff_drive_agv_factory_mvp
+name: Indoor differential-drive AGV for pallet transport
+system_type: agv_amr
+robot_drive: differential_drive
+environment: indoor_factory
+map_known: false
+dynamic_obstacles: true
+safety_level: high
+compute_power: medium
+sensors:
+  - wheel_encoders
+  - imu
+  - two_d_lidar
+  - safety_scanner
+tasks:
+  - localization
+  - navigation
+  - payload_transport
+  - path_planning
+  - trajectory_tracking
+  - obstacle_avoidance
+  - docking
+uncertainties:
+  - sensor_noise
+  - wheel_slip
+  - localization_drift
+  - dynamic_obstacles
+  - map_changes
+constraints:
+  - real_time
+  - deterministic_behavior
+  - safety_certification
+  - narrow_aisles
+  - human_shared_space
+  - collision_avoidance
+  - velocity_limit
+  - acceleration_limit
+notes: >
+  Indoor differential-drive AGV moving pallets between production cells and
+  staging areas in a factory where the prior map may be incomplete or stale,
+  with marked lanes, narrow aisles, forklifts, and occasional pedestrian traffic.
