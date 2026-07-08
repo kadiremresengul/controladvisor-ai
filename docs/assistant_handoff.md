@@ -2,19 +2,19 @@
 
 ## Current Status
 
-Day 5 completed. The project now has an explicit rule engine that evaluates a
-`ProblemDefinition` against a `MethodCardKnowledgeBase` and returns structured
-rule signals with candidate method IDs, positive reasons, caution reasons, and
-avoid reasons. The engine is scoped to readable MVP rules for indoor
-differential-drive AGV/AMR navigation and does not compute numeric scores.
+Day 6 completed. The project now has a deterministic scoring engine that
+converts rule-engine signals into scored method recommendations while preserving
+positive, caution, and avoid reasons for later explanation. The scoring layer
+uses transparent formula notes, clamps scores to the 0-100 range, and does not
+create final architecture bundles.
 
 ## Changed Files
 
 - `docs/assistant_handoff.md`
 - `src/controladvisor/reasoning/__init__.py`
-- `src/controladvisor/reasoning/rule_engine.py`
-- `tests/test_rule_engine.py`
-- Day 1 through Day 4 files remain in place.
+- `src/controladvisor/reasoning/scoring.py`
+- `tests/test_scoring.py`
+- Day 1 through Day 5 files remain in place.
 
 ## Test Command
 
@@ -26,7 +26,7 @@ Run with the local `.venv\Scripts` directory prepended to `PATH`.
 
 ## Test Result
 
-`38 passed`
+`50 passed in 2.02s`
 
 ## Known Issues
 
@@ -38,4 +38,4 @@ Run with the local `.venv\Scripts` directory prepended to `PATH`.
 
 ## Next Planned Step
 
-Day 6: Scoring Engine.
+Day 7: Recommender / architecture suggestion layer.
