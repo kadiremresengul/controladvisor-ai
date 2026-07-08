@@ -2,19 +2,19 @@
 
 ## Current Status
 
-Day 6 completed. The project now has a deterministic scoring engine that
-converts rule-engine signals into scored method recommendations while preserving
-positive, caution, and avoid reasons for later explanation. The scoring layer
-uses transparent formula notes, clamps scores to the 0-100 range, and does not
-create final architecture bundles.
+Day 7 completed. The project now has a deterministic recommender layer that
+turns scored method recommendations into a structured architecture suggestion.
+It groups methods into MVP engineering slots, selects the highest-scoring method
+per slot, preserves rationale and scores, and emits warnings for selected
+methods with caution reasons or missing critical layers.
 
 ## Changed Files
 
 - `docs/assistant_handoff.md`
 - `src/controladvisor/reasoning/__init__.py`
-- `src/controladvisor/reasoning/scoring.py`
-- `tests/test_scoring.py`
-- Day 1 through Day 5 files remain in place.
+- `src/controladvisor/reasoning/recommender.py`
+- `tests/test_recommender.py`
+- Day 1 through Day 6 files remain in place.
 
 ## Test Command
 
@@ -26,7 +26,7 @@ Run with the local `.venv\Scripts` directory prepended to `PATH`.
 
 ## Test Result
 
-`50 passed in 2.02s`
+`61 passed in 2.69s`
 
 ## Known Issues
 
@@ -38,4 +38,4 @@ Run with the local `.venv\Scripts` directory prepended to `PATH`.
 
 ## Next Planned Step
 
-Day 7: Recommender / architecture suggestion layer.
+Day 8: Explanation / textual recommendation generator.
